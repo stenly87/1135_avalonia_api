@@ -1,0 +1,24 @@
+@WebApplication1_HostAddress = https://localhost:7081
+
+GET {{WebApplication1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+POST {{WebApplication1_HostAddress}}/Login/
+Content-Type: application/json
+Accept: application/json
+
+{"Login":"123", "Password":"123"}
+###
+
+GET {{WebApplication1_HostAddress}}/Users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSNpbnRlZ2VyMzIiOiIxIiwiZXhwIjoxNzY5NDg5NjkzLCJpc3MiOiJNeUF1dGhTZXJ2ZXIiLCJhdWQiOiJNeUF1dGhDbGllbnQifQ.yLzm6Ew_dwayexh25UbF49H-IrcjKLQN0QvEeMPMM7c
+Accept: application/json
+
+###
+POST {{WebApplication1_HostAddress}}/Users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSNpbnRlZ2VyMzIiOiIxIiwiZXhwIjoxNzY5NDkwMzE3LCJpc3MiOiJNeUF1dGhTZXJ2ZXIiLCJhdWQiOiJNeUF1dGhDbGllbnQifQ.XODQ-I4dL99rC9qleJcwF1zP1i-H03Zkzq3TbkBZsXY
+Content-Type: application/json
+Accept: application/json
+
+{"Id": 0, "Login":"1234", "Password":"123", "Nickname": "test"}

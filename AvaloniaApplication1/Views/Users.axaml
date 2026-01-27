@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaApplication1="clr-namespace:AvaloniaApplication1"
+        xmlns:viewModels="clr-namespace:AvaloniaApplication1.ViewModels"
+        xmlns:models="clr-namespace:AvaloniaApplication1.Models"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.Users"
+        x:DataType="viewModels:UsersViewModel"
+        Title="Users">
+    <Window.DataContext>
+        <viewModels:UsersViewModel/>
+    </Window.DataContext>
+    <Window.DataTemplates>
+        <DataTemplate DataType="models:User">
+            <StackPanel>
+                <Label Content="{Binding Nickname, StringFormat=Ник: {0}}"/>
+                <Label Content="{Binding Login, StringFormat=Логин: {0}}"/>
+                <Label Content="{Binding Password, StringFormat=Пароль: {0}}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.DataTemplates>
+    <Grid RowDefinitions="Auto *">
+        <Menu>
+            <MenuItem Header="Добавить юзера" Command="{Binding CreateUserCommand}"/>
+        </Menu>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Users}">
+            
+        </ListBox>
+    </Grid>
+</Window>

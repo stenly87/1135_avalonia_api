@@ -9,6 +9,7 @@ public partial class _1135ApiAvaloniaContext : DbContext
 {
     public _1135ApiAvaloniaContext()
     {
+        //для генерации этих файлов:  dotnet ef dbcontext scaffold "server=192.168.200.13;user=student;password=student;database=1135_api_avalonia" Pomelo.EntityFrameworkCore.Mysql -o DB
     }
 
     public _1135ApiAvaloniaContext(DbContextOptions<_1135ApiAvaloniaContext> options)
